@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../minxpp/data/megaminx.hpp"
+#include "../../../minxpp/data/models/megaminx.hpp"
 #include "../../../minx_solver_helpers/all.hpp"
 
 class StartHandler {

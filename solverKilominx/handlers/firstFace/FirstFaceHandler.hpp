@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../../minxpp/data/kilominx.hpp"
+#include "../../../minxpp/data/models/kilominx.hpp"
 
 class FirstFaceHandler {
     public:

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../minxpp/data/megaminx.hpp"
+#include "../../minxpp/data/models/megaminx.hpp"
 
 #include "prisms/MagentaPrismHandler.hpp"
 #include "prisms/LimePrismHandler.hpp"

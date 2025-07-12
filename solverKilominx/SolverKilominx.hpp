@@ -15,8 +15,8 @@ class SolverKilominx {
         }
 
         Kilominx solve(Kilominx minx){
-            minx = this->startHandler->handle(minx);
-            minx = this->firstFaceHandler->handle(minx);
+            minx = this->startHandler.handle(minx);
+            minx = this->firstFaceHandler.handle(minx);
             //todo: implement remaining logic...
             return minx;
         }
