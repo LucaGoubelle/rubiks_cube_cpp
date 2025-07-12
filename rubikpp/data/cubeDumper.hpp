@@ -5,10 +5,7 @@
 using Row = std::vector<std::string>;
 
 class CubeDumper {
-    /***************************************************************************
-    * class to dump the cube data into JSON format
-    * @author: LucaGoubelle
-    ****************************************************************************/
+    
     private:
         std::string genRow(Row row){
             std::string content = "[";
@@ -23,21 +20,25 @@ class CubeDumper {
         std::string genFace(Face face){
             std::string content = "[\n";
             for(Row row : face)
-                content += genRow(row);
+                content += this->genRow(row);
             content.pop_back(); // remove trailing esp
             content.pop_back(); // remove trailing comma
             content += "],\n";
             return content;
         }
     public:
+        /**
+         * Dump the cube object to JSON format
+         * @author: LucaGoubelle
+         */
         std::string dump(Cube cube){
             std::string content = "{\n";
-            content += "back: "+genFace(cube.back);
-            content += "up: "+genFace(cube.up);
-            content += "front: "+genFace(cube.front);
-            content += "left: "+genFace(cube.left);
-            content += "right: "+genFace(cube.right);
-            content += "down: "+genFace(cube.down);
+            content += "back: "+this->genFace(cube.back);
+            content += "up: "+this->genFace(cube.up);
+            content += "front: "+this->genFace(cube.front);
+            content += "left: "+this->genFace(cube.left);
+            content += "right: "+this->genFace(cube.right);
+            content += "down: "+this->genFace(cube.down);
             content.pop_back(); // remove trailing esp
             content.pop_back(); // remove trailing comma
             content += "\n}\n";

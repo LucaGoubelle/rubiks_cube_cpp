@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../data/kilominx.hpp"
+#include "../../data/models/kilominx.hpp"
 
 class KilominxRotateUtils {
     public:

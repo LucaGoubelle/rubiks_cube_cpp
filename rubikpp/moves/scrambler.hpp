@@ -8,8 +8,7 @@ private:
     CubeMover mover;
 
     /**
-     * @brief return a random integer between min and max
-     * 
+     * return a random integer between min and max
      * @param nMin 
      * @param nMax 
      * @return int 
@@ -45,6 +44,5 @@ public:
         } catch(...){
             throw ScramblerException();
         }
-        
     }
 };

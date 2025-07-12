@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../data/megaminx.hpp"
+#include "../../data/models/megaminx.hpp"
 
 class MegaminxRotateUtils {
     public:

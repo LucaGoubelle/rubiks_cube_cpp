@@ -2,3 +2,13 @@
 - implement remaining case of yellow cross `correct`
 - implement last corner handler
 
+### rubikpp ###
+- change scrambles for 2x2 - 3x3
+- implement 4x4 - 7x7 scrambling
+
+### minxpp ###
+- implement kilominx mover
+- implement megaminx mover
+
+### main ###
+- add main loop for interacting with console

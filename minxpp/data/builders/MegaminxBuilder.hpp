@@ -3,8 +3,7 @@
 #include "../models/megaminx.hpp"
 
 class MegaminxBuilder {
-    public:
-
+    private:
         /**
         * Build a megaminx's face, fill it with 'elem' param
         * @author: LucaGoubelle
@@ -21,6 +20,8 @@ class MegaminxBuilder {
             return face;
 
         }
+
+    public:
 
         /**
         * Build a full Megaminx

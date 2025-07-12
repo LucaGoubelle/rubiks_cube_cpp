@@ -1,6 +1,5 @@
 #pragma once
 #include <map>
-
 #include "models/Minx.hpp"
 #include "builders/KilominxBuilder.hpp"
 #include "builders/MegaminxBuilder.hpp"
@@ -17,7 +16,7 @@ class MinxFactory {
         }
 
         /**
-         * @brief make a puzzle corresponding to the puzzleType string
+         * make a puzzle corresponding to the puzzleType string
          * @author LucaGoubelle
          * @param puzzleType 
          * @return Minx 

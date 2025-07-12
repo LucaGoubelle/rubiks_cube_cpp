@@ -3,8 +3,7 @@
 #include "../models/kilominx.hpp"
 
 class KilominxBuilder {
-    public:
-
+    private:
         /**
         * Build a Kilominx's face, fill it with 'elem' param
         * @author: LucaGoubelle
@@ -16,23 +15,24 @@ class KilominxBuilder {
             return face;
         }
 
+    public:
         /**
         * Build a full Kilominx
         * @author: LucaGoubelle
         */
         Kilominx build(){
-            Face up = buildFace("grey");
-            Face front = buildFace("magenta");
-            Face left = buildFace("lime");
-            Face right = buildFace("beige");
-            Face downLeft = buildFace("blue");
-            Face downRight = buildFace("red");
-            Face absLeft = buildFace("yellow");
-            Face absRight = buildFace("green");
-            Face backLeft = buildFace("orange");
-            Face backRight = buildFace("cyan");
-            Face back = buildFace("purple");
-            Face down = buildFace("white");
+            Face up = this->buildFace("grey");
+            Face front = this->buildFace("magenta");
+            Face left = this->buildFace("lime");
+            Face right = this->buildFace("beige");
+            Face downLeft = this->buildFace("blue");
+            Face downRight = this->buildFace("red");
+            Face absLeft = this->buildFace("yellow");
+            Face absRight = this->buildFace("green");
+            Face backLeft = this->buildFace("orange");
+            Face backRight = this->buildFace("cyan");
+            Face back = this->buildFace("purple");
+            Face down = this->buildFace("white");
 
             return Kilominx(
                 up, front, left, right, downLeft, downRight, 
