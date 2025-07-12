@@ -16,9 +16,13 @@ class Solver2x2 {
             LastLayerHandler lastLayerHandler;
         }
 
+        /**
+         * Solve a 2x2 puzzle, return altered cube object
+         * @author: LucaGoubelle
+         */
         Cube solve(Cube cube){
             // Solve the cube
-            cube = this->startHandler.start(cube);
+            cube = this->startHandler.handle(cube);
             cube = this->firstLayerHandler.handle(cube);
             cube = this->lastLayerHandler.handle(cube);
             return cube;
