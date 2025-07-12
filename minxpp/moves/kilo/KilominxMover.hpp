@@ -2,6 +2,6 @@
 
 #include "../minx_mover.hpp"
 
-class MegaminxMover : public MinxMover {
+class KilominxMover : public MinxMover {
 
 };

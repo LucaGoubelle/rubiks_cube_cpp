@@ -1,4 +1,4 @@
 #pragma once
 
-#include "data/MegaminxBuilder.hpp"
+#include "data/builders/MegaminxBuilder.hpp"
 
