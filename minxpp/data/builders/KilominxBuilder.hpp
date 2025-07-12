@@ -1,6 +1,6 @@
 #pragma once
 
-#include "kilominx.hpp"
+#include "../models/kilominx.hpp"
 
 class KilominxBuilder {
     public:

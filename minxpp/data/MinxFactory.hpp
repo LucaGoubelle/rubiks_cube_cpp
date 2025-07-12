@@ -1,12 +1,9 @@
 #pragma once
 #include <map>
 
-#include "Minx.hpp"
-#include "kilominx.hpp"
-#include "megaminx.hpp"
-
-#include "KilominxBuilder.hpp"
-#include "MegaminxBuilder.hpp"
+#include "models/Minx.hpp"
+#include "builders/KilominxBuilder.hpp"
+#include "builders/MegaminxBuilder.hpp"
 
 class MinxFactory {
     private:

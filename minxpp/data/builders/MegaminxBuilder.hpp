@@ -1,6 +1,6 @@
 #pragma once
 
-#include "megaminx.hpp"
+#include "../models/megaminx.hpp"
 
 class MegaminxBuilder {
     public:
