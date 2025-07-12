@@ -1,6 +1,13 @@
 ### solver3 ###
 - implement remaining case of yellow cross `correct`
 - implement last corner handler
+- use proc classes approach (to reduce the code in handlers)
+
+### solver helpers ###
+- implement other cases in kilominx megaminx scanner !!!
+
+
+
 
 ### rubikpp ###
 - change scrambles for 2x2 - 3x3
@@ -10,5 +17,10 @@
 - implement kilominx mover
 - implement megaminx mover
 
+
+
+
 ### main ###
 - add main loop for interacting with console
+
+

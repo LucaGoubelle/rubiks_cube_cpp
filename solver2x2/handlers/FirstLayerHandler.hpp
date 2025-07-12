@@ -96,7 +96,7 @@ class FirstLayerHandler {
         }
 
         Cube processWBO(Cube cube, std::string targetedOrientColors){
-            // todo: implement this method
+            // todo: use a processor class instead
             std::map<std::string, std::string> hmap;
 
             // up

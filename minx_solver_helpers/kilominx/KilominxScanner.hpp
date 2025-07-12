@@ -7,10 +7,10 @@ class KilominxScanner {
     public:
 
         /**
-         * @brief scan a corner of the kilominx, return a string of the colors scanned
+         * Scan a corner of the kilominx, return a string of the colors scanned
          * @author LucaGoubelle
          * @param minx 
-         * @return std::map<std::string, std::string> 
+         * @return std::string 
          */
         std::string scanCorner(Kilominx minx, std::string orient){
             std::map<std::string, std::string> hmap;
@@ -21,7 +21,7 @@ class KilominxScanner {
         }
 
         /**
-         * @brief scan all the corners of the kilominx, return a map of the orients => colors
+         * Scan all the corners of the kilominx, return a map of the orients => colors
          * @author LucaGoubelle
          * @param minx 
          * @return std::map<std::string, std::string> 
