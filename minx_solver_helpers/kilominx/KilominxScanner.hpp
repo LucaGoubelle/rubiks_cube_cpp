@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include "../../minxpp/data/kilominx.hpp"
+#include "../../minxpp/data/models/kilominx.hpp"
 
 class KilominxScanner {
     public:

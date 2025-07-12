@@ -17,7 +17,7 @@ class KilominxCornerSeeker {
         std::string seekCorner(Kilominx minx, std::vector<std::string> posibilities){
             std::string targetedOrient = "";
             std::string targetedColors = "";
-            std::map<std::string, std::string> corners = this->scanner.scanCorners(cube);
+            std::map<std::string, std::string> corners = this->scanner.scanCorners(minx);
             for(auto const& x : corners){
                 if(std::find(posibilities.begin(), posibilities.end(), x.second)!=posibilities.end()){
                     targetedOrient = x.first;

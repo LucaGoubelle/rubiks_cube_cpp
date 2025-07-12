@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include "../minxpp/data/megaminx.hpp"
+#include "../minxpp/data/models/megaminx.hpp"
 
 class MegaminxScanner {
     public:
