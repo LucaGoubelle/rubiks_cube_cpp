@@ -5,7 +5,7 @@
 class LimePrismHandler {
     public:
         Megaminx handle(Megaminx minx){
-            //todo: implement this
+            // implement this
             return minx;
         }
 };

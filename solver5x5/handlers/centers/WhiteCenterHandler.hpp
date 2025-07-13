@@ -125,7 +125,7 @@ class WhiteCenterHandler {
         }
 
         Cube handle(Cube cube){
-            // todo: implement this
+            // implement this
             cube = this->solveWhiteCenterBar(cube);
             return cube;
         }

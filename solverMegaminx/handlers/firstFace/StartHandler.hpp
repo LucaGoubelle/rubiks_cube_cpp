@@ -8,7 +8,7 @@ class StartHandler {
         MegaminxScanner scanner;
 
         Megaminx _startOrienting(Megaminx minx, std::string data){
-            //todo: implement this
+            // implement this
             return minx;
         }
     

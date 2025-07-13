@@ -5,7 +5,7 @@
 class WhiteStarHandler {
     public:
         Megaminx handle(Megaminx minx){
-            // todo: implement this
+            // implement this
             return minx;
         }
 };

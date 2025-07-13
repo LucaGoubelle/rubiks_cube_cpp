@@ -6,12 +6,12 @@
 class LastCentersHandler {
     private:
         Cube createFirstBar(Cube cube){
-            //todo: implement this
+            // implement this
             return cube;
         }
 
         Cube createSecondBar(Cube cube){
-            //todo: implement this
+            // implement this
             return cube;
         }
     public:

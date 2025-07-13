@@ -6,7 +6,7 @@
 class WhiteEdgesHandler {
     public:
         Cube handle(Cube cube){
-            // todo: implement this
+            // implement this
             return cube;
         }
 };

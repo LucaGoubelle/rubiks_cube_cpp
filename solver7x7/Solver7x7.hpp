@@ -56,7 +56,7 @@ class Solver7x7 {
         Cube solve(Cube cube){
             cube = this->solveCenters(cube);
             cube = this->solveEdges(cube);
-            // todo: implement other lines
+            // implement other lines
             return cube;
         }
 };
