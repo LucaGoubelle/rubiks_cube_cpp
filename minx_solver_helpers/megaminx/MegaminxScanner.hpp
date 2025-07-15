@@ -25,6 +25,10 @@ class MegaminxScanner {
         std::string scanEdge(Megaminx minx, std::string orient){
             std::map<std::string, std::string> hmap;
             hmap["up_front"] = minx.up[0][5]+"_"+minx.front[0][1];
+            hmap["up_left"] = minx.up[0][7]+"_"+minx.left[0][1];
+            hmap["up_right"] = minx.up[0][3]+"_"+minx.right[0][1];
+            hmap["up_backLeft"] = minx.up[0][9]+"_"+minx.backLeft[0][1];
+            hmap["up_backRight"] = minx.up[0][1]+"_"+minx.backRight[0][1];
             //todo: implement other cases
             return (hmap.count(orient)) ? hmap[orient] : "???";
         }
@@ -40,6 +44,10 @@ class MegaminxScanner {
         std::map<std::string, std::string> scanEdges(Megaminx minx){
             std::map<std::string, std::string> hmap;
             hmap["up_front"] = this->scanEdge(minx, "up_front");
+            hmap["up_left"] = this->scanEdge(minx, "up_left");
+            hmap["up_right"] = this->scanEdge(minx, "up_right");
+            hmap["up_backLeft"] = this->scanEdge(minx, "up_backLeft");
+            hmap["up_backRight"] = this->scanEdge(minx, "up_backRight");
             return hmap;
         }
 
