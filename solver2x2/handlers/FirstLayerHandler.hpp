@@ -1,46 +1,15 @@
 #pragma once
 #include "../../rubikpp/all.hpp"
 #include "../../solverHelpers/all.hpp"
+#include "../processors/wgr_processor.hpp"
+#include "../processors/wgo_processor.hpp"
 
 class FirstLayerHandler {
     private:
         CubeMover mover;
         Corner3Seeker cornerSeeker;
-
-        Cube processWGR(Cube cube, std::string targetedOrientColors){
-            std::map<std::string, std::string> hmap;
-
-            // up
-            hmap["up_front_right::white_green_red"] = "U' y "+CubeAlgorithms::ELEVATOR+" y'";
-            hmap["up_front_right::red_white_green"] = "U' R' U' R";
-            hmap["up_front_right::green_red_white"] = "U2 R' U R";
-
-            hmap["up_front_left::white_red_green"] = "R' U' R U' R' U R";
-            hmap["up_front_left::green_white_red"] = "U R' U R";
-            hmap["up_front_left::red_green_white"] = "U2 R' U' R";
-
-            hmap["up_back_right::white_red_green"] = "y "+CubeAlgorithms::ELEVATOR+" y'";
-            hmap["up_back_right::green_white_red"] = "U' R' U R";
-            hmap["up_back_right::red_green_white"] = "R' U' R";
-
-            hmap["up_back_left::white_green_red"] = "U y"+CubeAlgorithms::ELEVATOR+" y'";
-            hmap["up_back_left::red_white_green"] = "U R' U' R";
-            hmap["up_back_left::green_red_white"] = "R' U R";
-
-            // down
-            hmap["down_front_left::white_green_red"] = "R' L' U2 R L";
-            hmap["down_front_left::red_white_green"] = "L' U L R' U2 R";
-            hmap["down_front_left::green_red_white"] = "L' U2 L R' U' R";
-
-            hmap["down_back_left::white_red_green"] = "L U L' R' U' R";
-            hmap["down_back_left::green_white_red"] = "L U' L' U R' U' R";
-            hmap["down_back_left::red_green_white"] = "L U L' U' R' U R";
-
-            hmap["down_back_right::red_white_green"] = "R' U R U' R' U R";
-            hmap["down_back_right::green_red_white"] = "R' U' R U R' U' R";
-
-            return (hmap.count(targetedOrientColors)) ? this->mover.multiMoves(cube, hmap[targetedOrientColors]) : cube;
-        }
+        WGRProcessor procWGR;
+        WGOProcessor procWGO;
 
         Cube insertWGR(Cube cube){
             std::vector<std::string> posibilities = {
@@ -49,39 +18,9 @@ class FirstLayerHandler {
                 "red_white_green", "red_green_white"
             };
             std::string targetedOrientColors = this->cornerSeeker.seekCorner(cube, posibilities);
-            cube = this->processWGR(cube, targetedOrientColors);
+            std::string sequence = this->procWGR.process(targetedOrientColors);
+            cube = this->mover.multiMoves(cube, sequence);
             return cube;
-        }
-
-        Cube processWGO(Cube cube, std::string targetedOrientColors){
-            std::map<std::string, std::string> hmap;
-
-            //up
-            hmap["up_front_right::white_orange_green"] = "L U L' U L U' L'";
-            hmap["up_front_right::green_white_orange"] = "L U2 L'";
-            hmap["up_front_right::orange_green_white"] = "U2 L U L'";
-
-            hmap["up_front_left::white_green_orange"] = "L' U L2 U' L";
-            hmap["up_front_left::orange_white_green"] = "U L U L'";
-            hmap["up_front_left::green_orange_white"] = "U2 L U' L'";
-
-            hmap["up_back_left::white_orange_green"] = "y2 "+CubeAlgorithms::ELEVATOR+" y2";
-            hmap["up_back_left::green_white_orange"] = "U L U' L'";
-            hmap["up_back_left::orange_green_white"] = "L U L'";
-
-            hmap["up_back_right::white_green_orange"] = "U' y2 "+CubeAlgorithms::ELEVATOR+" y2";
-            hmap["up_back_right::orange_white_green"] = "U' L U L'";
-            hmap["up_back_right::green_orange_white"] = "L U' L'";
-            
-            //down
-            hmap["down_front_left::white_orange_green"] = "y' "+CubeAlgorithms::ELEVATOR+" y' U "+CubeAlgorithms::ELEVATOR+" y2";
-            hmap["down_front_left::green_white_orange"] = "L' U L U L U L'";
-            hmap["down_front_left::orange_green_white"] = "L' U2 L2 U' L'";
-            
-            hmap["down_back_left::orange_white_green"] = "L U' L' U L U' L'";
-            hmap["down_back_left::green_orange_white"] = "L U L' U' L U L'";
-
-            return (hmap.count(targetedOrientColors)) ? this->mover.multiMoves(cube, hmap[targetedOrientColors]) : cube;
         }
 
         Cube insertWGO(Cube cube){
@@ -91,7 +30,8 @@ class FirstLayerHandler {
                 "green_white_orange", "green_orange_white"
             };
             std::string targetedOrientColors = this->cornerSeeker.seekCorner(cube, posibilities);
-            cube = this->processWGO(cube, targetedOrientColors);
+            std::string sequence = this->procWGO.process(targetedOrientColors);
+            cube = this->mover.multiMoves(cube, sequence);
             return cube;
         }
 
@@ -137,6 +77,8 @@ class FirstLayerHandler {
         FirstLayerHandler(){
             CubeMover mover;
             Corner3Seeker cornerSeeker;
+            WGRProcessor procWGR;
+            WGOProcessor procWGO;
         }
 
         Cube handle(Cube cube){
