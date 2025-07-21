@@ -1,5 +1,5 @@
 #pragma once
-
+#include <algorithm>
 #include "KilominxScanner.hpp"
 
 class KilominxCornerSeeker {

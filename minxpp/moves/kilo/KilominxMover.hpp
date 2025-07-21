@@ -40,4 +40,11 @@ class KilominxMover : public MinxMover {
 
             else return minx;
         }
+
+        Kilominx multiMoves(Kilominx minx, std::string mvs){
+            std::vector<std::string> mvVec = this->split(mvs, ' ');
+            for(std::string mv : mvVec)
+                minx = this->simpleMove(minx, mv);
+            return minx;
+        }
 };

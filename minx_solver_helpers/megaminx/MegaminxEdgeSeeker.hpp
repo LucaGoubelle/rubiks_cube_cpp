@@ -1,5 +1,5 @@
 #pragma once
-
+#include <algorithm>
 #include "MegaminxScanner.hpp"
 
 class MegaminxEdgeSeeker {
