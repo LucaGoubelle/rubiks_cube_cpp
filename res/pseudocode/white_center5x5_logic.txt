@@ -8,18 +8,18 @@
 
 #include "rubikpp/data/cube.hpp"
 #include "rubikpp/move/mover.hpp"
-#include "solverHelpers/seekers/Center5x5Seeker.hpp"
+#include "solverHelpers/seekers/Center5Seeker.hpp"
 
 class MiddleWhiteBarHandler {
     private:
-        Center5x5Seeker centerSeeker;
+        Center5Seeker centerSeeker;
         Mover mover;
 
         Cube _handle_first_center_edge(Cube cube){
             int count = 0;
             while(count < 4){
-                std::string result = this->centerSeeker.seekCenter(cube, "front", "white");
-                std::string result2 = this->centerSeeker.seekCenter(cube, "up", "white");
+                std::string result = this->centerSeeker.seekCenterEdge(cube, "front", "white");
+                std::string result2 = this->centerSeeker.seekCenterEdge(cube, "up", "white");
                 // map front
                 std::map<std::string, std::string> hmap;
                 hmap["front::up"] = "F Rw' D2";
@@ -51,8 +51,8 @@ class MiddleWhiteBarHandler {
         Cube _handle_second_center_edge(Cube cube){
             int count = 0;
             while(count < 4){
-                std::string result = this->centerSeeker.seekCenter(cube, "front", "white");
-                std::string result2 = this->centerSeeker.seekCenter(cube, "up", "white");
+                std::string result = this->centerSeeker.seekCenterEdge(cube, "front", "white");
+                std::string result2 = this->centerSeeker.seekCenterEdge(cube, "up", "white");
                 // map front
                 std::map<std::string, std::string> hmap;
                 hmap["front::up"] = "F Rw' D";
@@ -84,7 +84,7 @@ class MiddleWhiteBarHandler {
     public:
 
         MiddleWhiteBarHandler(){
-            Center5x5Seeker centerSeeker;
+            Center5Seeker centerSeeker;
             Mover mover;
         }
 
@@ -97,7 +97,7 @@ class MiddleWhiteBarHandler {
 
 class WhiteBarHandler {
     private:
-        Center5x5Seeker centerSeeker;
+        Center5Seeker centerSeeker;
         Mover mover;
 
         Cube _handle_first_bar(Cube cube){
@@ -111,6 +111,11 @@ class WhiteBarHandler {
         }
 
     public:
+        WhiteBarHandler(){
+            Center5Seeker centerSeeker;
+            Mover mover;
+        }
+
         Cube handle(Cube cube){
             cube = this->_handle_first_bar(cube);
             cube = this->_handle_second_bar(cube);
