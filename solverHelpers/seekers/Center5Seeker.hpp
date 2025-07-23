@@ -43,7 +43,7 @@ class Center5Seeker {
             else if(face=="down")
                 for(auto const& x : hmapDown)
                     if(x.second == color) return x.first;
-            else return "???";
+            return "???";
         }
 
         std::string seekCenterCorner(Cube cube, std::string face, std::string color){
@@ -83,6 +83,6 @@ class Center5Seeker {
             else if (face=="down")
                 for(auto const& x : hmapDown)
                     if(x.second == color) return x.first;
-            else return "???";
+            return "???";
         }
 };
