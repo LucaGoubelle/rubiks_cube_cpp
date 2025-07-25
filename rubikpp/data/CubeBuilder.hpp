@@ -1,5 +1,6 @@
 #pragma once
 #include "cube.hpp"
+#include "../exceptions/BuilderException.hpp"
 
 class CubeBuilder {
 
@@ -31,12 +32,16 @@ class CubeBuilder {
 	 * @return Cube 
 	 */
     Cube build(int size){
-		Face back = this->buildFace(size, "green");
-		Face up = this->buildFace(size, "yellow");
-		Face front = this->buildFace(size, "blue");
-		Face left = this->buildFace(size, "orange");
-		Face right = this->buildFace(size, "red");
-		Face down = this->buildFace(size, "white");
+		try {
+			Face back = this->buildFace(size, "green");
+			Face up = this->buildFace(size, "yellow");
+			Face front = this->buildFace(size, "blue");
+			Face left = this->buildFace(size, "orange");
+			Face right = this->buildFace(size, "red");
+			Face down = this->buildFace(size, "white");
     	return Cube(back,up,front,left,right,down);
+		} catch(...){
+			throw BuilderException();
+		}
     }
 };
