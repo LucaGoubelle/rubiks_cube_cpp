@@ -1,0 +1,26 @@
+start_handler.handle() // orienting first
+white_center_handler.handle() 
+-> middle_white_bar_handler.handle()
+-> side_white_bar_handler.handle()
+yellow_center_handler.handle()
+-> middle_yellow_bar_handler.handle()
+-> side_yellow_bar_handler.handle()
+
+reorient_cube(up=yellow, front=blue)
+orient_cube(up=red, front=blue) // y'
+
+blue_center_handler.handle()
+-> middle_blue_bar_handler.handle()
+-> side_blue_bar_handler.handle()
+
+orient_cube(up=green, front=red)
+
+red_center_handler.handle()
+-> middle_red_bar_handler.handle()
+-> side_red_bar_handler.handle()
+
+orient_cube(up=orange, front=green)
+
+green_center_handler.handle()
+-> middle_green_bar_handler.handle()
+-> side_green_bar_handler.handle()
