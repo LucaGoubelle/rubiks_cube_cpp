@@ -1,0 +1,39 @@
+// pure experimental code (pseudocode C++)
+// some errors can occured
+// do not run it, unless if cleaned or features are all implemented
+
+#pragma once
+#include <map>
+#include <string>
+
+#include "rubikpp/data/cube.hpp"
+#include "rubikpp/move/mover.hpp"
+#include "solverHelpers/seekers/Center5Seeker.hpp"
+
+class MiddleBlueBarHandler {
+    private:
+        Mover mover;
+        Center5Seeker seeker;
+
+        Cube _handleFirstCenterEdge(Cube cube){
+            //todo: implement this
+            return cube;
+        }
+
+        Cube _handleSecondCenterEdge(Cube cube){
+            //todo: implement this
+            return cube;
+        }
+
+    public:
+        MiddleBlueBarHandler(){
+            Mover mover;
+            Center5Seeker seeker;
+        }
+
+        Cube handle(Cube cube){
+            cube = this->_handleFirstCenterEdge(cube);
+            cube = this->_handleSecondCenterEdge(cube);
+            return cube;
+        }
+};
