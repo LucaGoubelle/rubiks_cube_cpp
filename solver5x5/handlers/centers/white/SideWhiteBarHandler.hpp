@@ -57,8 +57,41 @@ class SideWhiteBarHandler {
             std::string result_up = this->centerSeeker.seekCenterCorner(cube, "up", "white");
 
             std::map<std::string, std::string> hmap_left;
-            //todo: implement cases here
-            hmap_left[""] = "";
+            hmap_left["left::up::front"] = "Uw' ";
+            hmap_left["left::down::front"] = "L' Uw'";
+            hmap_left["left::up::back"] = "L Uw'";
+            hmap_left["left::down::back"] = "L2 Uw'";
+
+            std::map<std::string, std::string> hmap_right;
+            hmap_right["right::up::front"] = "R Uw";
+            hmap_right["right::down::front"] = "R2 Uw";
+            hmap_right["right::up::back"] = "Uw ";
+            hmap_right["right::down::back"] = "R' Uw";
+
+            std::map<std::string, std::string> hmap_back;
+            hmap_back["back::up::left"] = "Uw2 ";
+            hmap_back["back::up::right"] = "Uw' L Uw'";
+            hmap_back["back::down::left"] = "y2 F' y2 Uw2";
+            hmap_back["back::down::right"] = "y2 F2 y2 Uw2";
+
+            std::map<std::string, std::string> hmap_up;
+            hmap_up["up::front::left"] = "U F' Lw F Lw'";
+            hmap_up["up::front::right"] = "";
+            hmap_up[""] = "";
+            hmap_up[""] = "";
+
+            //todo: handle case up
+
+            if(hmap_left.count(result_left)){
+                cube = this->mover.multiMoves(cube, hmap_left[result_left]);
+                return cube;
+            } else if (hmap_right.count(result_right)){
+                cube = this->mover.multiMoves(cube, hmap_right[result_right]);
+                return cube;
+            } else if (hmap_back.count(result_back)){
+                cube = this->mover.multiMoves(cube, hmap_back[result_back]);
+                return cube;
+            }
 
             return cube;
         }
