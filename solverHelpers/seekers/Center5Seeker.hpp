@@ -53,6 +53,18 @@ class Center5Seeker {
             hmapFront["front::down::right"] = cube.front[3][3];
             hmapFront["front::down::left"] = cube.front[3][1];
 
+            std::map<std::string, std::string> hmapLeft;
+            hmapLeft["left::up::back"] = cube.left[1][1];
+            hmapLeft["left::up::front"] = cube.left[1][3];
+            hmapLeft["left::down::back"] = cube.left[3][1];
+            hmapLeft["left::down::front"] = cube.left[3][3];
+
+            std::map<std::string, std::string> hmapRight;
+            hmapRight["right::up::front"] = cube.right[1][1];
+            hmapRight["right::up::back"] = cube.right[1][3];
+            hmapRight["right::down::front"] = cube.right[3][1];
+            hmapRight["right::down::back"] = cube.right[3][3];
+
             std::map<std::string, std::string> hmapUp;
             hmapUp["up::front::left"] = cube.up[3][1];
             hmapUp["up::front::right"] = cube.up[3][3];
@@ -73,6 +85,12 @@ class Center5Seeker {
 
             if(face=="front")
                 for(auto const& x : hmapFront)
+                    if(x.second==color) return x.first;
+            else if(face=="left")
+                for(auto const& x : hmapLeft)
+                    if(x.second==color) return x.first;
+            else if(face=="right")
+                for(auto const& x: hmapRight)
                     if(x.second==color) return x.first;
             else if (face=="up")
                 for(auto const& x : hmapUp)
