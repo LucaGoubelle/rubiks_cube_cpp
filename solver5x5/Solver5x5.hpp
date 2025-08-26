@@ -3,7 +3,7 @@
 #include "../rubikpp/data/cube.hpp"
 
 #include "handlers/centers/white/WhiteCenterHandler.hpp"
-#include "handlers/centers/YellowCenterHandler.hpp"
+#include "handlers/centers/yellow/YellowCenterHandler.hpp"
 #include "handlers/centers/BlueCenterHandler.hpp"
 #include "handlers/centers/RedCenterHandler.hpp"
 #include "handlers/centers/LastCentersHandler.hpp"
