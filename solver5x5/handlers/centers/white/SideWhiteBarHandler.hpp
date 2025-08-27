@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include "../../../../rubikpp/data/cube.hpp"
 #include "../../../../rubikpp/moves/mover.hpp"
 #include "../../../../solverHelpers/seekers/Center5Seeker.hpp"
@@ -50,11 +51,17 @@ class SideWhiteBarHandler {
         }
 
         Cube _handleBar_part2(Cube cube){
-            // implement this
+            std::string result_front = this->centerSeeker.seekCenterCorner(cube, "front", "white");
             std::string result_left = this->centerSeeker.seekCenterCorner(cube, "left", "white");
             std::string result_right = this->centerSeeker.seekCenterCorner(cube, "right", "white");
             std::string result_back = this->centerSeeker.seekCenterCorner(cube, "back", "white");
             std::string result_up = this->centerSeeker.seekCenterCorner(cube, "up", "white");
+
+            std::map<std::string, std::string> hmap_front;
+            hmap_front["front::up::left"] = "Uw' R Uw";
+            hmap_front["front::down::left"] = "Dw' L2 Dw Uw'";
+            hmap_front["front::up::right"] = "";
+            hmap_front["front::down::right"] = "";
 
             std::map<std::string, std::string> hmap_left;
             hmap_left["left::up::front"] = "Uw' ";
@@ -76,13 +83,20 @@ class SideWhiteBarHandler {
 
             std::map<std::string, std::string> hmap_up;
             hmap_up["up::front::left"] = "U F' Lw F Lw'";
-            hmap_up["up::front::right"] = "";
-            hmap_up[""] = "";
-            hmap_up[""] = "";
+            hmap_up["up::front::right"] = "F Rw' F Rw F2";
+            hmap_up["up::back::left"] = "F' Lw F Lw'";
+            hmap_up["up::back::right"] = "U F Rw' F Rw F2";
 
-            //todo: handle case up
+            std::cout << "result_back: " << result_back << std::endl;
+            std::cout << "result_up: " << result_up << std::endl;
+            std::cout << "result_left: " << result_left << std::endl;
+            std::cout << "result_right: " << result_right << std::endl;
+            std::cout << "result_front: " << result_front << std::endl;
 
-            if(hmap_left.count(result_left)){
+            if (hmap_front.count(result_front)){
+                cube = this->mover.multiMoves(cube, hmap_front[result_front]);
+                return cube;
+            } else if(hmap_left.count(result_left)){
                 cube = this->mover.multiMoves(cube, hmap_left[result_left]);
                 return cube;
             } else if (hmap_right.count(result_right)){
@@ -90,6 +104,9 @@ class SideWhiteBarHandler {
                 return cube;
             } else if (hmap_back.count(result_back)){
                 cube = this->mover.multiMoves(cube, hmap_back[result_back]);
+                return cube;
+            } else if(hmap_up.count(result_up)){
+                cube = this->mover.multiMoves(cube, hmap_up[result_up]);
                 return cube;
             }
 
