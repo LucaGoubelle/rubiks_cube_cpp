@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "rubikpp/all.hpp"
-#include "solver7x7/all.hpp"
+#include "solversCube/solver7x7/all.hpp"
 
 using namespace std;
 
