@@ -2,32 +2,31 @@
 #include "../data/cube.hpp"
 #include "helpers/move_utils.hpp"
 
+class STDMoves {
+    public:
+        Cube moveU(Cube cube){
+            int size = cube.up.size();
+            cube.up = MoveUtils::rotate(cube.up);
 
-// horizontal moves
+            Face newFront = MoveUtils::genEmptyFace(size);
+            Face newLeft = MoveUtils::genEmptyFace(size);
+            Face newRight = MoveUtils::genEmptyFace(size);
+            Face newBack = MoveUtils::genEmptyFace(size);
 
-Cube moveU(Cube cube){
-    int size = cube.up.size();
-    cube.up = MoveUtils::rotate(cube.up);
+            for(int i=0;i<size;i++){
+                newFront[0][i] = cube.right[0][i];
+                newRight[0][i] = cube.back[0][i];
+                newLeft[0][i] = cube.front[0][i];
+                newBack[0][i] = cube.left[0][i];
+            }
 
-    Face newFront = MoveUtils::genEmptyFace(size);
-    Face newLeft = MoveUtils::genEmptyFace(size);
-    Face newRight = MoveUtils::genEmptyFace(size);
-    Face newBack = MoveUtils::genEmptyFace(size);
+            cube.front = MoveUtils::transfert(cube.front, newFront);
+            cube.left = MoveUtils::transfert(cube.left, newLeft);
+            cube.right = MoveUtils::transfert(cube.right, newRight);
+            cube.back = MoveUtils::transfert(cube.back, newBack);
 
-    for(int i=0;i<size;i++){
-        newFront[0][i] = cube.right[0][i];
-        newRight[0][i] = cube.back[0][i];
-        newLeft[0][i] = cube.front[0][i];
-        newBack[0][i] = cube.left[0][i];
-    }
-
-    cube.front = MoveUtils::transfert(cube.front, newFront);
-    cube.left = MoveUtils::transfert(cube.left, newLeft);
-    cube.right = MoveUtils::transfert(cube.right, newRight);
-    cube.back = MoveUtils::transfert(cube.back, newBack);
-
-    return cube;
-}
+            return cube;
+        }
 
 Cube moveUPrime(Cube cube){
     for(int i=0; i<3;i++)
@@ -188,3 +187,8 @@ Cube moveF2(Cube cube){
         cube = moveF(cube);
     return cube;
 }
+};
+
+// horizontal moves
+
+

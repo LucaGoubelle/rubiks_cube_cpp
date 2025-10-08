@@ -1,7 +1,7 @@
 #pragma once
 #include "../data/cube.hpp"
 #include "../exceptions/ScramblerException.hpp"
-#include "moves.hpp"
+#include "mover.hpp"
 
 class CubeScrambler {
 private:

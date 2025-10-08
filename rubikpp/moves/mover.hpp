@@ -5,13 +5,14 @@
 #include "../data/cube.hpp"
 #include "../exceptions/MoverException.hpp"
 
-#include "moves.hpp"
+#include "std_moves.hpp"
 #include "wmoves.hpp"
 #include "axis_moves.hpp"
 
 class CubeMover {
 private:
     AxisMoves axisMoves;
+    STDMoves stdMoves;
     WMoves wMoves;
 
     int getMoveCode(std::string mv){
@@ -105,6 +106,7 @@ public:
     CubeMover(){
         AxisMoves axisMoves;
         WMoves wMoves;
+        STDMoves stdMoves;
     }
 
     /**
@@ -117,21 +119,21 @@ public:
     Cube simpleMove(Cube cube, std::string mv){
         int code = this->getMoveCode(mv);
         switch(code){
-            case 1: cube = moveU(cube); break;
-            case 2: cube = moveUPrime(cube); break;
-            case 3: cube = moveU2(cube); break;
-            case 4: cube = moveD(cube); break;
-            case 5: cube = moveDPrime(cube); break;
-            case 6: cube = moveD2(cube); break;
-            case 7: cube = moveL(cube); break;
-            case 8: cube = moveLPrime(cube); break;
-            case 9: cube = moveL2(cube); break;
-            case 10: cube = moveR(cube); break;
-            case 11: cube = moveRPrime(cube); break;
-            case 12: cube = moveR2(cube); break;
-            case 13: cube = moveF(cube); break;
-            case 14: cube = moveFPrime(cube); break;
-            case 15: cube = moveF2(cube); break;
+            case 1: cube = this->stdMoves.moveU(cube); break;
+            case 2: cube = this->stdMoves.moveUPrime(cube); break;
+            case 3: cube = this->stdMoves.moveU2(cube); break;
+            case 4: cube = this->stdMoves.moveD(cube); break;
+            case 5: cube = this->stdMoves.moveDPrime(cube); break;
+            case 6: cube = this->stdMoves.moveD2(cube); break;
+            case 7: cube = this->stdMoves.moveL(cube); break;
+            case 8: cube = this->stdMoves.moveLPrime(cube); break;
+            case 9: cube = this->stdMoves.moveL2(cube); break;
+            case 10: cube = this->stdMoves.moveR(cube); break;
+            case 11: cube = this->stdMoves.moveRPrime(cube); break;
+            case 12: cube = this->stdMoves.moveR2(cube); break;
+            case 13: cube = this->stdMoves.moveF(cube); break;
+            case 14: cube = this->stdMoves.moveFPrime(cube); break;
+            case 15: cube = this->stdMoves.moveF2(cube); break;
             case 16: cube = this->axisMoves.moveY(cube); break;
             case 17: cube = this->axisMoves.moveYPrime(cube); break;
             case 18: cube = this->axisMoves.moveY2(cube); break;
