@@ -4,14 +4,14 @@
 
 class KilominxRotateUtils {
     public:
-        static Face genEmptyFace(){
+        Face genEmptyFace(){
             Face face;
             for(int i=0;i<5;i++)
                 face.push_back("");
             return face;
         }
 
-        static Face rotate(Face face){
+        Face rotate(Face face){
             Face newFace = genEmptyFace();
 
             newFace[0] = face[4];
@@ -23,7 +23,7 @@ class KilominxRotateUtils {
             return face;
         }
 
-        static Face rotateAsync(Face face){
+        Face rotateAsync(Face face){
             Face newFace = genEmptyFace();
             
             newFace[0] = face[1];
@@ -35,31 +35,31 @@ class KilominxRotateUtils {
             return face;
         }
 
-        static Face rotateTwice(Face face){
+        Face rotateTwice(Face face){
             for(int i=0;i<2;i++)
                 face = rotate(face);
             return face;
         }
 
-        static Face rotateTwiceAsync(Face face){
+        Face rotateTwiceAsync(Face face){
             for(int i=0;i<2;i++)
                 face = rotateAsync(face);
             return face;
         }
 
-        static Face rotateThree(Face face){
+        Face rotateThree(Face face){
             for(int i=0;i<3;i++)
                 face = rotate(face);
             return face;
         }
 
-        static Face rotateThreeAsync(Face face){
+        Face rotateThreeAsync(Face face){
             for(int i=0;i<3;i++)
                 face = rotateAsync(face);
             return face;
         }
 
-        static Face transfert(Face face, Face newFace){
+        Face transfert(Face face, Face newFace){
             for(int i=0;i<face.size();i++)
                 face[i] = (newFace[i]!="") ? newFace[i] : face[i];
             return face;

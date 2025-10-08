@@ -4,7 +4,7 @@
 
 class MegaminxRotateUtils {
     public:
-        static Face genEmptyFace(){
+        Face genEmptyFace(){
             Face face;
             std::vector<std::string> row;
             std::vector<std::string> row2;
@@ -16,7 +16,7 @@ class MegaminxRotateUtils {
             return face;
         }
 
-        static Face rotate(Face face){
+        Face rotate(Face face){
             Face newFace = genEmptyFace();
 
             newFace[0][0] = face[0][8];
@@ -35,7 +35,7 @@ class MegaminxRotateUtils {
             return newFace;
         }
 
-        static Face rotateAsync(Face face){
+        Face rotateAsync(Face face){
             Face newFace = genEmptyFace();
             
             newFace[0][0] = face[0][2];
@@ -54,31 +54,31 @@ class MegaminxRotateUtils {
             return newFace;
         }
 
-        static Face rotateTwice(Face face){
+        Face rotateTwice(Face face){
             for(int i=0;i<2;i++)
                 face = rotate(face);
             return face;
         }
 
-        static Face rotateTwiceAsync(Face face){
+        Face rotateTwiceAsync(Face face){
             for(int i=0;i<2;i++)
                 face = rotateAsync(face);
             return face;
         }
 
-        static Face rotateThree(Face face){
+        Face rotateThree(Face face){
             for(int i=0;i<3;i++)
                 face = rotate(face);
             return face;
         }
 
-        static Face rotateThreeAsync(Face face){
+        Face rotateThreeAsync(Face face){
             for(int i=0;i<3;i++)
                 face = rotateAsync(face);
             return face;
         }
 
-        static Face transfert(Face face, Face newFace){
+        Face transfert(Face face, Face newFace){
             for(int i=0;i<face[0].size();i++)
                 face[0][i] = (newFace[0][i]!="") ? newFace[0][i] : face[0][i];
             face[1][0] = (newFace[1][0]!="") ? newFace[1][0] : face[1][0];

@@ -3,6 +3,7 @@
 #include "data/cube.hpp"
 #include "data/cubeDumper.hpp"
 #include "data/CubeBuilder.hpp"
+#include "data/CubeStrDumper.hpp"
 
 #include "display/cube_printer.hpp"
 
