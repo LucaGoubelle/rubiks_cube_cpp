@@ -1,26 +1,26 @@
 #pragma once
 #include "../data/cube.hpp"
-#include "helpers/move_utils.hpp"
+#include "moves.hpp"
 
 // ###################
 // # axis moves ######
 // ###################
 
-class AxisMoves {
+class AxisMoves : public Moves {
     public:
         Cube moveY(Cube cube){
-            cube.up = MoveUtils::rotate(cube.up);
-            cube.down = MoveUtils::rotateAsync(cube.down);
+            cube.up = this->moveUtils.rotate(cube.up);
+            cube.down = this->moveUtils.rotateAsync(cube.down);
 
             Face newFront = cube.right;
             Face newBack = cube.left;
             Face newRight = cube.back;
             Face newLeft = cube.front;
 
-            cube.front = MoveUtils::transfert(cube.front, newFront);
-            cube.right = MoveUtils::transfert(cube.right, newRight);
-            cube.back = MoveUtils::transfert(cube.back, newBack);
-            cube.left = MoveUtils::transfert(cube.left, newLeft);
+            cube.front = this->moveUtils.transfert(cube.front, newFront);
+            cube.right = this->moveUtils.transfert(cube.right, newRight);
+            cube.back = this->moveUtils.transfert(cube.back, newBack);
+            cube.left = this->moveUtils.transfert(cube.left, newLeft);
 
             return cube;
         }
@@ -38,18 +38,18 @@ class AxisMoves {
         }
 
         Cube moveX(Cube cube){
-            cube.right = MoveUtils::rotate(cube.right);
-            cube.left = MoveUtils::rotateAsync(cube.left);
+            cube.right = this->moveUtils.rotate(cube.right);
+            cube.left = this->moveUtils.rotateAsync(cube.left);
 
             Face newFront = cube.down;
             Face newUp = cube.front;
-            Face newBack = MoveUtils::rotateTwice(cube.up);
-            Face newDown = MoveUtils::rotateTwice(cube.back);
+            Face newBack = this->moveUtils.rotateTwice(cube.up);
+            Face newDown = this->moveUtils.rotateTwice(cube.back);
 
-            cube.front = MoveUtils::transfert(cube.front, newFront);
-            cube.up = MoveUtils::transfert(cube.up, newUp);
-            cube.back = MoveUtils::transfert(cube.back, newBack);
-            cube.down = MoveUtils::transfert(cube.down, newDown);
+            cube.front = this->moveUtils.transfert(cube.front, newFront);
+            cube.up = this->moveUtils.transfert(cube.up, newUp);
+            cube.back = this->moveUtils.transfert(cube.back, newBack);
+            cube.down = this->moveUtils.transfert(cube.down, newDown);
 
             return cube;
         }
@@ -67,18 +67,18 @@ class AxisMoves {
         }
 
         Cube moveZ(Cube cube){
-            cube.front = MoveUtils::rotate(cube.front);
-            cube.back = MoveUtils::rotateAsync(cube.back);
+            cube.front = this->moveUtils.rotate(cube.front);
+            cube.back = this->moveUtils.rotateAsync(cube.back);
 
-            Face newUp = MoveUtils::rotate(cube.left);
-            Face newRight = MoveUtils::rotate(cube.up);
-            Face newLeft = MoveUtils::rotate(cube.down);
-            Face newDown = MoveUtils::rotate(cube.right);
+            Face newUp = this->moveUtils.rotate(cube.left);
+            Face newRight = this->moveUtils.rotate(cube.up);
+            Face newLeft = this->moveUtils.rotate(cube.down);
+            Face newDown = this->moveUtils.rotate(cube.right);
 
-            cube.up = MoveUtils::transfert(cube.up, newUp);
-            cube.right = MoveUtils::transfert(cube.right, newRight);
-            cube.left = MoveUtils::transfert(cube.left, newLeft);
-            cube.down = MoveUtils::transfert(cube.down, newDown);
+            cube.up = this->moveUtils.transfert(cube.up, newUp);
+            cube.right = this->moveUtils.transfert(cube.right, newRight);
+            cube.left = this->moveUtils.transfert(cube.left, newLeft);
+            cube.down = this->moveUtils.transfert(cube.down, newDown);
 
             return cube;
         }

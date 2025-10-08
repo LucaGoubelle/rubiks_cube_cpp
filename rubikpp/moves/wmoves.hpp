@@ -1,17 +1,17 @@
 #pragma once
 #include "../data/cube.hpp"
-#include "helpers/move_utils.hpp"
+#include "moves.hpp"
 
-class WMoves {
+class WMoves : public Moves {
 public:
     Cube moveUw(Cube cube, int nbLayer = 2){
         int size = cube.up.size();
-        cube.up = MoveUtils::rotate(cube.up);
+        cube.up = this->moveUtils.rotate(cube.up);
 
-        Face newFront = MoveUtils::genEmptyFace(size);
-        Face newLeft = MoveUtils::genEmptyFace(size);
-        Face newRight = MoveUtils::genEmptyFace(size);
-        Face newBack = MoveUtils::genEmptyFace(size);
+        Face newFront = this->moveUtils.genEmptyFace(size);
+        Face newLeft = this->moveUtils.genEmptyFace(size);
+        Face newRight = this->moveUtils.genEmptyFace(size);
+        Face newBack = this->moveUtils.genEmptyFace(size);
 
         for(int j=0;j<nbLayer;j++){
             for(int i=0;i<size;i++){
@@ -22,10 +22,10 @@ public:
             }
         }
 
-        cube.front = MoveUtils::transfert(cube.front, newFront);
-        cube.left = MoveUtils::transfert(cube.left, newLeft);
-        cube.right = MoveUtils::transfert(cube.right, newRight);
-        cube.back = MoveUtils::transfert(cube.back, newBack);
+        cube.front = this->moveUtils.transfert(cube.front, newFront);
+        cube.left = this->moveUtils.transfert(cube.left, newLeft);
+        cube.right = this->moveUtils.transfert(cube.right, newRight);
+        cube.back = this->moveUtils.transfert(cube.back, newBack);
 
         return cube;
     }
@@ -44,12 +44,12 @@ public:
 
     Cube moveDw(Cube cube, int nbLayer = 2){
         int size = cube.down.size();
-        cube.down = MoveUtils::rotate(cube.down);
+        cube.down = this->moveUtils.rotate(cube.down);
 
-        Face newFront = MoveUtils::genEmptyFace(size);
-        Face newLeft = MoveUtils::genEmptyFace(size);
-        Face newRight = MoveUtils::genEmptyFace(size);
-        Face newBack = MoveUtils::genEmptyFace(size);
+        Face newFront = this->moveUtils.genEmptyFace(size);
+        Face newLeft = this->moveUtils.genEmptyFace(size);
+        Face newRight = this->moveUtils.genEmptyFace(size);
+        Face newBack = this->moveUtils.genEmptyFace(size);
 
         for(int j=0;j<nbLayer;j++){
             for(int i=0;i<size;i++){
@@ -60,10 +60,10 @@ public:
             }
         }
 
-        cube.front = MoveUtils::transfert(cube.front, newFront);
-        cube.left = MoveUtils::transfert(cube.left, newLeft);
-        cube.right = MoveUtils::transfert(cube.right, newRight);
-        cube.back = MoveUtils::transfert(cube.back, newBack);
+        cube.front = this->moveUtils.transfert(cube.front, newFront);
+        cube.left = this->moveUtils.transfert(cube.left, newLeft);
+        cube.right = this->moveUtils.transfert(cube.right, newRight);
+        cube.back = this->moveUtils.transfert(cube.back, newBack);
         return cube;
     }
 
@@ -81,12 +81,12 @@ public:
 
     Cube moveLw(Cube cube, int nbLayer = 2){
         int size = cube.left.size();
-        cube.left = MoveUtils::rotate(cube.left);
+        cube.left = this->moveUtils.rotate(cube.left);
 
-        Face newUp = MoveUtils::genEmptyFace(size);
-        Face newFront = MoveUtils::genEmptyFace(size);
-        Face newDown = MoveUtils::genEmptyFace(size);
-        Face newBack = MoveUtils::genEmptyFace(size);
+        Face newUp = this->moveUtils.genEmptyFace(size);
+        Face newFront = this->moveUtils.genEmptyFace(size);
+        Face newDown = this->moveUtils.genEmptyFace(size);
+        Face newBack = this->moveUtils.genEmptyFace(size);
 
         for(int j=0;j<nbLayer;j++){
             for(int i=0;i<size;i++){
@@ -97,10 +97,10 @@ public:
             }
         }
 
-        cube.front = MoveUtils::transfert(cube.front, newFront);
-        cube.up = MoveUtils::transfert(cube.up, MoveUtils::rotateTwice(newUp));
-        cube.down = MoveUtils::transfert(cube.down, newDown);
-        cube.back = MoveUtils::transfert(cube.back, MoveUtils::rotateTwice(newBack));
+        cube.front = this->moveUtils.transfert(cube.front, newFront);
+        cube.up = this->moveUtils.transfert(cube.up, this->moveUtils.rotateTwice(newUp));
+        cube.down = this->moveUtils.transfert(cube.down, newDown);
+        cube.back = this->moveUtils.transfert(cube.back, this->moveUtils.rotateTwice(newBack));
         return cube;
     }
 
@@ -118,12 +118,12 @@ public:
 
     Cube moveRw(Cube cube, int nbLayer = 2){
         int size = cube.right.size();
-        cube.right = MoveUtils::rotate(cube.right);
+        cube.right = this->moveUtils.rotate(cube.right);
 
-        Face newFront = MoveUtils::genEmptyFace(size);
-        Face newUp = MoveUtils::genEmptyFace(size);
-        Face newBack = MoveUtils::genEmptyFace(size);
-        Face newDown = MoveUtils::genEmptyFace(size);
+        Face newFront = this->moveUtils.genEmptyFace(size);
+        Face newUp = this->moveUtils.genEmptyFace(size);
+        Face newBack = this->moveUtils.genEmptyFace(size);
+        Face newDown = this->moveUtils.genEmptyFace(size);
 
         for(int j=0;j<nbLayer;j++){
             for(int i=0;i<size;i++){
@@ -134,10 +134,10 @@ public:
             }
         }
 
-        cube.front = MoveUtils::transfert(cube.front, newFront);
-        cube.up = MoveUtils::transfert(cube.up, newUp);
-        cube.back = MoveUtils::transfert(cube.back, MoveUtils::rotateTwice(newBack));
-        cube.down = MoveUtils::transfert(cube.down, MoveUtils::rotateTwice(newDown));
+        cube.front = this->moveUtils.transfert(cube.front, newFront);
+        cube.up = this->moveUtils.transfert(cube.up, newUp);
+        cube.back = this->moveUtils.transfert(cube.back, this->moveUtils.rotateTwice(newBack));
+        cube.down = this->moveUtils.transfert(cube.down, this->moveUtils.rotateTwice(newDown));
         
         return cube;
     }
@@ -156,12 +156,12 @@ public:
 
     Cube moveFw(Cube cube, int nbLayer = 2){
         int size = cube.front.size();
-        cube.front = MoveUtils::rotate(cube.front);
+        cube.front = this->moveUtils.rotate(cube.front);
 
-        Face newUp = MoveUtils::genEmptyFace(size);
-        Face newLeft = MoveUtils::genEmptyFace(size);
-        Face newRight = MoveUtils::genEmptyFace(size);
-        Face newDown = MoveUtils::genEmptyFace(size);
+        Face newUp = this->moveUtils.genEmptyFace(size);
+        Face newLeft = this->moveUtils.genEmptyFace(size);
+        Face newRight = this->moveUtils.genEmptyFace(size);
+        Face newDown = this->moveUtils.genEmptyFace(size);
 
         for(int j=0;j<nbLayer;j++){
             for(int i=0;i<size;i++){
@@ -172,10 +172,10 @@ public:
             }
         }
 
-        cube.up = MoveUtils::transfert(cube.up, MoveUtils::rotate(newUp));
-        cube.left = MoveUtils::transfert(cube.left, MoveUtils::rotate(newLeft));
-        cube.right = MoveUtils::transfert(cube.right, MoveUtils::rotate(newRight));
-        cube.down = MoveUtils::transfert(cube.down, MoveUtils::rotate(newDown));
+        cube.up = this->moveUtils.transfert(cube.up, this->moveUtils.rotate(newUp));
+        cube.left = this->moveUtils.transfert(cube.left, this->moveUtils.rotate(newLeft));
+        cube.right = this->moveUtils.transfert(cube.right, this->moveUtils.rotate(newRight));
+        cube.down = this->moveUtils.transfert(cube.down, this->moveUtils.rotate(newDown));
 
         return cube;
     }

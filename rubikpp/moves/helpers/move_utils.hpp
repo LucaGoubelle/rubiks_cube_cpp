@@ -6,7 +6,7 @@ using Face = std::vector< std::vector< std::string > >;
 
 class MoveUtils{
 public:
-    static Face genEmptyFace(int size){
+    Face genEmptyFace(int size){
 		Face face;
 		for(int i=0;i<size;i++){
 			std::vector< std::string > row;
@@ -17,9 +17,9 @@ public:
     	return face;
     }
 
-    static Face rotate(Face face){
+    Face rotate(Face face){
 		int size = face.size();
-		Face newFace = genEmptyFace(size);
+		Face newFace = this->genEmptyFace(size);
 		for(int i=0;i<size;i++){
 			int cnt = size - 1;
 			for(int j=0;j<size;j++){
@@ -30,19 +30,19 @@ public:
 		return newFace;
     }
 
-    static Face rotateAsync(Face face){
+    Face rotateAsync(Face face){
 		for(int i=0;i<3;i++)
 			face = rotate(face);
 		return face;
     }
 
-    static Face rotateTwice(Face face){
+    Face rotateTwice(Face face){
 		for(int i=0;i<2;i++)
 			face = rotate(face);
 		return face;
     }
 
-    static Face transfert(Face face, Face newFace){
+    Face transfert(Face face, Face newFace){
 		int size = face.size();
 		for(int i=0;i<size;i++)
 			for(int j=0;j<size;j++)
