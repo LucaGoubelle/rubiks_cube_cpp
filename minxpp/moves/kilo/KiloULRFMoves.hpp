@@ -1,7 +1,8 @@
 #pragma once
 #include "../../data/models/kilominx.hpp"
+#include "KiloMoves.hpp"
 
-class KiloULRFMoves {
+class KiloULRFMoves : public KilominxMoves {
     public:
         Kilominx moveU(Kilominx minx){
             // todo: implement this

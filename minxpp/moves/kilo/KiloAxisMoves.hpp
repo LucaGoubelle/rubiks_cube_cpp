@@ -1,7 +1,8 @@
 #pragma once
 #include "../../data/models/kilominx.hpp"
+#include "KiloMoves.hpp"
 
-class KiloAxisMoves {
+class KiloAxisMoves : public KilominxMoves {
     public:
         Kilominx moveY(Kilominx minx){
             //todo: implement this

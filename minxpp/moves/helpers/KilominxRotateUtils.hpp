@@ -12,7 +12,7 @@ class KilominxRotateUtils {
         }
 
         Face rotate(Face face){
-            Face newFace = genEmptyFace();
+            Face newFace = this->genEmptyFace();
 
             newFace[0] = face[4];
             newFace[1] = face[0];
@@ -24,7 +24,7 @@ class KilominxRotateUtils {
         }
 
         Face rotateAsync(Face face){
-            Face newFace = genEmptyFace();
+            Face newFace = this->genEmptyFace();
             
             newFace[0] = face[1];
             newFace[1] = face[2];
@@ -37,25 +37,25 @@ class KilominxRotateUtils {
 
         Face rotateTwice(Face face){
             for(int i=0;i<2;i++)
-                face = rotate(face);
+                face = this->rotate(face);
             return face;
         }
 
         Face rotateTwiceAsync(Face face){
             for(int i=0;i<2;i++)
-                face = rotateAsync(face);
+                face = this->rotateAsync(face);
             return face;
         }
 
         Face rotateThree(Face face){
             for(int i=0;i<3;i++)
-                face = rotate(face);
+                face = this->rotate(face);
             return face;
         }
 
         Face rotateThreeAsync(Face face){
             for(int i=0;i<3;i++)
-                face = rotateAsync(face);
+                face = this->rotateAsync(face);
             return face;
         }
 
