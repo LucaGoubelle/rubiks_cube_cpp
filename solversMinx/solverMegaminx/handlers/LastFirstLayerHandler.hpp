@@ -2,7 +2,7 @@
 
 #include "../../../minxpp/data/models/megaminx.hpp"
 
-class GreyStarHandler {
+class LastFirstLayerHandler {
     public:
         Megaminx handle(Megaminx minx){
             // implement this

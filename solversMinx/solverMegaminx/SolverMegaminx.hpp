@@ -1,7 +1,5 @@
 #pragma once
 
-#include "../minxpp/data/models/megaminx.hpp"
-
 #include "handlers/firstFace/StartHandler.hpp"
 #include "handlers/firstFace/WhiteStarHandler.hpp"
 #include "handlers/firstFace/FirstCornersHandler.hpp"

@@ -2,7 +2,7 @@
 
 #include "../../../minxpp/data/models/megaminx.hpp"
 
-class CyanPrismHandler {
+class MiddleCornersHandler {
     public:
         Megaminx handle(Megaminx minx){
             // implement this

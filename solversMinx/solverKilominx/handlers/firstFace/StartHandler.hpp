@@ -1,9 +1,9 @@
 #pragma once
 
-#include "../../../minxpp/data/models/kilominx.hpp"
-#include "../../../minx_solver_helpers/all.hpp"
+#include "../../../../minxpp/data/models/kilominx.hpp"
+#include "../../../../minxpp/moves/kilo/KilominxMover.hpp"
+#include "../../../../minx_solver_helpers/all.hpp"
 #include "../../processors/firstCorners/wbr_processor.hpp"
-#include "../../../minxpp/moves/kilo/KilominxMover.hpp"
 
 class StartHandler {
     private:

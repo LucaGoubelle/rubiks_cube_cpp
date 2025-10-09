@@ -2,7 +2,7 @@
 
 #include "../../../minxpp/data/models/megaminx.hpp"
 
-class FirstCornersHandler {
+class SecondLayerHandler {
     public:
         Megaminx handle(Megaminx minx){
             // implement this
