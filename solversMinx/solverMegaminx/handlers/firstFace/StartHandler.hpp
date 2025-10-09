@@ -2,8 +2,9 @@
 
 #include "../../../../minxpp/data/models/megaminx.hpp"
 #include "../../../../minx_solver_helpers/all.hpp"
+#include "../handler.hpp"
 
-class StartHandler {
+class StartHandler : public Handler {
     private:
         MegaminxScanner scanner;
 

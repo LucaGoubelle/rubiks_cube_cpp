@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../../../../minxpp/data/models/kilominx.hpp"
-#include "../../../../minxpp/moves/kilo/KilominxMover.hpp"
+#include "../handler.hpp"
 #include "../../../../minx_solver_helpers/all.hpp"
 #include "../../processors/firstCorners/wbr_processor.hpp"
 
-class StartHandler {
+class StartHandler : public Handler {
     private:
         KilominxScanner scanner;
         KilominxMover mover;

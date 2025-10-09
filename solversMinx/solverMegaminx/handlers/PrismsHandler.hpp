@@ -1,15 +1,14 @@
 #pragma once
 
-#include "../../../minxpp/data/models/megaminx.hpp"
-
 #include "prisms/MagentaPrismHandler.hpp"
 #include "prisms/LimePrismHandler.hpp"
 #include "prisms/BeigePrismHandler.hpp"
 #include "prisms/OrangePrismHandler.hpp"
 #include "prisms/CyanPrismHandler.hpp"
+#include "handler.hpp"
 
 
-class PrismsHandler {
+class PrismsHandler : public Handler {
     private:
         MagentaPrismHandler magentaPrismHandler;
         LimePrismHandler limePrismHandler;

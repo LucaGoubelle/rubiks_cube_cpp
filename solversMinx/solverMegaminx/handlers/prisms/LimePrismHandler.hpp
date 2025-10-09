@@ -1,8 +1,9 @@
 #pragma once
 
 #include "../../../../minxpp/data/models/megaminx.hpp"
+#include "../handler.hpp"
 
-class LimePrismHandler {
+class LimePrismHandler : public Handler {
     public:
         Megaminx handle(Megaminx minx){
             // implement this

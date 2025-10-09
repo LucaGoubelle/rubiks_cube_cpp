@@ -1,8 +1,9 @@
 #pragma once
 
 #include "../../../../minxpp/data/models/megaminx.hpp"
+#include "../handler.hpp"
 
-class LastCornersHandler {
+class LastCornersHandler : public Handler {
     public:
         Megaminx handle(Megaminx minx){
             // implement this
