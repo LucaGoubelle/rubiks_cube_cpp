@@ -1,13 +1,13 @@
 #pragma once
-#include "../../../rubikpp/all.hpp"
+#include "../../../rubikpp/data/cube.hpp"
 #include "../../../solverHelpers/all.hpp"
 #include "../processors/wgr_processor.hpp"
 #include "../processors/wgo_processor.hpp"
 #include "../processors/wbo_processor.hpp"
+#include "handler.hpp"
 
-class FirstLayerHandler {
+class FirstLayerHandler : public Handler {
     private:
-        CubeMover mover;
         Corner3Seeker cornerSeeker;
         WGRProcessor procWGR;
         WGOProcessor procWGO;
@@ -51,7 +51,6 @@ class FirstLayerHandler {
 
     public:
         FirstLayerHandler(){
-            CubeMover mover;
             Corner3Seeker cornerSeeker;
             WGRProcessor procWGR;
             WGOProcessor procWGO;

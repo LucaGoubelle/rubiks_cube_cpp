@@ -1,11 +1,11 @@
 #pragma once
-#include "../../../rubikpp/all.hpp"
+#include "../../../rubikpp/data/cube.hpp"
 #include "../../../solverHelpers/all.hpp"
 #include "../processors/wbr_processor.hpp"
+#include "handler.hpp"
 
-class StartHandler {
+class StartHandler : public Handler {
     private:
-        CubeMover mover;
         Cube2x2Scanner cube2x2Scanner;
         Corner2Seeker seeker;
         WBRProcessor proc;
@@ -24,7 +24,6 @@ class StartHandler {
         
     public:
         StartHandler(){
-            CubeMover mover;
             Cube2x2Scanner cube2x2Scanner;
             Corner2Seeker seeker;
             WBRProcessor proc;

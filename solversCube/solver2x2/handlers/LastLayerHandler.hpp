@@ -1,10 +1,10 @@
 #pragma once
-#include "../../../rubikpp/all.hpp"
+#include "../../../rubikpp/data/cube.hpp"
 #include "../../../solverHelpers/all.hpp"
+#include "handler.hpp"
 
-class LastLayerHandler {
+class LastLayerHandler : public Handler {
     private:
-        CubeMover mover;
         OLLScanner ollScanner;
 
         Cube oll(Cube cube){
@@ -63,7 +63,6 @@ class LastLayerHandler {
         }
     public:
         LastLayerHandler(){
-            CubeMover mover;
             OLLScanner ollScanner;
         }
 
