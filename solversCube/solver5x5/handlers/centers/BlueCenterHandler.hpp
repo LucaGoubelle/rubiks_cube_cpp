@@ -1,9 +1,9 @@
 #pragma once
 
 #include "../../../../rubikpp/data/cube.hpp"
-#include "../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 
-class BlueCenterHandler {
+class BlueCenterHandler : public Handler {
     public:
         Cube handle(Cube cube){
             // implement this

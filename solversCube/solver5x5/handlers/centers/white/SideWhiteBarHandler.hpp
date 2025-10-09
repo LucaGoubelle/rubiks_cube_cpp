@@ -1,15 +1,12 @@
 #pragma once
 
-#include <iostream>
-
 #include "../../../../../rubikpp/data/cube.hpp"
-#include "../../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 #include "../../../../../solverHelpers/seekers/Center5Seeker.hpp"
 
-class SideWhiteBarHandler {
+class SideWhiteBarHandler : public Handler {
     private:
         Center5Seeker centerSeeker;
-        CubeMover mover;
 
         Cube _handleBar(Cube cube){
             cube = this->_handleBar_part1(cube);
@@ -88,12 +85,6 @@ class SideWhiteBarHandler {
             hmap_up["up::back::left"] = "F' Lw F Lw'";
             hmap_up["up::back::right"] = "U F Rw' F Rw F2";
 
-            std::cout << "result_back: " << result_back << std::endl;
-            std::cout << "result_up: " << result_up << std::endl;
-            std::cout << "result_left: " << result_left << std::endl;
-            std::cout << "result_right: " << result_right << std::endl;
-            std::cout << "result_front: " << result_front << std::endl;
-
             if (hmap_front.count(result_front)){
                 cube = this->mover.multiMoves(cube, hmap_front[result_front]);
                 return cube;
@@ -122,7 +113,6 @@ class SideWhiteBarHandler {
     public:
         SideWhiteBarHandler(){
             Center5Seeker centerSeeker;
-            CubeMover mover;
         }
 
         Cube handle(Cube cube){

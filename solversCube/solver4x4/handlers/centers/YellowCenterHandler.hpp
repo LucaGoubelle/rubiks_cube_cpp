@@ -2,8 +2,9 @@
 
 #include "../../../../rubikpp/data/cube.hpp"
 #include "../../../../solverHelpers/all.hpp"
+#include "../handler.hpp"
 
-class YellowCenterHandler {
+class YellowCenterHandler : public Handler {
     private:
         Cube createFirstBar(Cube cube){
             // implement this

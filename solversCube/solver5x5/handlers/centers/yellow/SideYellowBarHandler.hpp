@@ -1,10 +1,10 @@
 #pragma once
 
 #include "../../../../../rubikpp/data/cube.hpp"
-#include "../../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 #include "../../../../../solverHelpers/seekers/Center5Seeker.hpp"
 
-class SideYellowBarHandler {
+class SideYellowBarHandler : public Handler {
     public:
         Cube handle(Cube cube){
             //todo: implement this

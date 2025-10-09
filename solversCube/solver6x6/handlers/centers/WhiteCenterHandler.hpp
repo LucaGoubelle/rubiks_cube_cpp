@@ -2,8 +2,9 @@
 
 #include "../../../../rubikpp/data/cube.hpp"
 #include "../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 
-class WhiteCenterHandler {
+class WhiteCenterHandler : public Handler {
     public:
         Cube handle(Cube cube){
             // implement this

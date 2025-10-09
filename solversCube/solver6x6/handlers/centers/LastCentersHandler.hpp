@@ -2,8 +2,9 @@
 
 #include "../../../../rubikpp/data/cube.hpp"
 #include "../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 
-class LastCentersHandler {
+class LastCentersHandler : public Handler {
     public:
         Cube handle(Cube cube){
             // implement this

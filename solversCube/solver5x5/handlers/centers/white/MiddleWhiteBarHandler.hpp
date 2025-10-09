@@ -2,13 +2,12 @@
 #pragma once
 
 #include "../../../../../rubikpp/data/cube.hpp"
-#include "../../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 #include "../../../../../solverHelpers/seekers/Center5Seeker.hpp"
 
-class MiddleWhiteBarHandler {
+class MiddleWhiteBarHandler : public Handler {
     private:
         Center5Seeker centerSeeker;
-        CubeMover mover;
 
         Cube _handle_first_center_edge(Cube cube){
             int count = 0;
@@ -80,7 +79,6 @@ class MiddleWhiteBarHandler {
 
         MiddleWhiteBarHandler(){
             Center5Seeker centerSeeker;
-            CubeMover mover;
         }
 
         Cube handle(Cube cube){

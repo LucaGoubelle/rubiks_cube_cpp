@@ -1,11 +1,11 @@
 #pragma once
 
 #include "../../../../../rubikpp/data/cube.hpp"
-#include "../../../../../rubikpp/moves/mover.hpp"
+#include "../handler.hpp"
 #include "MiddleWhiteBarHandler.hpp"
 #include "SideWhiteBarHandler.hpp"
 
-class WhiteCenterHandler {
+class WhiteCenterHandler : public Handler {
     private:
         MiddleWhiteBarHandler middleBarHandler;
         SideWhiteBarHandler sideWhiteBarHandler;
