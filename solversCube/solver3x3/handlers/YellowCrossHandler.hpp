@@ -1,12 +1,10 @@
 #pragma once
 
 #include "../../../rubikpp/data/cube.hpp"
-#include "../../../rubikpp/moves/mover.hpp"
+#include "handler.hpp"
 
-class YellowCrossHandler {
+class YellowCrossHandler : public Handler {
     private:
-        CubeMover mover;
-
         Cube create(Cube cube){
             std::string config = "";
             std::string upSticker = cube.up[0][1];
@@ -53,10 +51,6 @@ class YellowCrossHandler {
             return (hmap.count(result)) ? this->mover.multiMoves(cube, hmap[result]) : cube;
         } 
     public:
-        YellowCrossHandler(){
-            CubeMover mover;
-        }
-
         Cube handle(Cube cube){
             cube = this->create(cube);
             cube = this->correct(cube);

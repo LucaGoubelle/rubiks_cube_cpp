@@ -1,12 +1,11 @@
 #pragma once
 
 #include "../../../rubikpp/data/cube.hpp"
-#include "../../../rubikpp/moves/mover.hpp"
 #include "../../../solverHelpers/all.hpp"
+#include "handler.hpp"
 
-class LastCornersHandler {
+class LastCornersHandler : public Handler {
     private:
-        CubeMover mover;
         OLLScanner ollScanner;
         Corner3Seeker cornerSeeker;
 
@@ -107,7 +106,6 @@ class LastCornersHandler {
         }
     public:
         LastCornersHandler(){
-            CubeMover mover;
             OLLScanner ollScanner;
             Corner3Seeker cornerSeeker;
         }

@@ -1,16 +1,14 @@
 #pragma once
 
 #include "../../../rubikpp/data/cube.hpp"
-#include "../../../rubikpp/moves/mover.hpp"
 #include "../../../solverHelpers/all.hpp"
+#include "handler.hpp"
 
-class StartHandler {
+class StartHandler : public Handler {
     private:
-        CubeMover mover;
         Cube3x3Scanner cube3x3Scanner;
     public:
         StartHandler(){
-            CubeMover mover;
             Cube3x3Scanner cube3x3Scanner;
         }
 

@@ -22,6 +22,7 @@ class Solver3x3 {
             SecondLayerHandler secondLayerHandler;
             YellowCrossHandler yellowCrossHandler;
         }
+        
         Cube solve(Cube cube){
             cube = this->startHandler.start(cube);
             cube = this->whiteCrossHandler.handle(cube);

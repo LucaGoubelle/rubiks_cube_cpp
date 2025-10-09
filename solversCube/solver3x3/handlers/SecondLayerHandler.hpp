@@ -1,12 +1,11 @@
 #pragma once
 
 #include "../../../rubikpp/data/cube.hpp"
-#include "../../../rubikpp/moves/mover.hpp"
 #include "../../../solverHelpers/all.hpp"
+#include "handler.hpp"
 
-class SecondLayerHandler {
+class SecondLayerHandler : public Handler {
     private:
-        CubeMover mover;
         Edge3Seeker edgeSeeker;
 
         Cube insertBR(Cube cube){
@@ -119,7 +118,6 @@ class SecondLayerHandler {
     public:
 
         SecondLayerHandler(){
-            CubeMover mover;
             Edge3Seeker edgeSeeker;
         }
 

@@ -1,13 +1,12 @@
 #pragma once
 
 #include "../../../rubikpp/data/cube.hpp"
-#include "../../../rubikpp/moves/mover.hpp"
 #include "../../../solverHelpers/scanners/Cube3x3Scanner.hpp"
 #include "../../../solverHelpers/seekers/Edge3Seeker.hpp"
+#include "handler.hpp"
 
-class WhiteCrossHandler {
+class WhiteCrossHandler : public Handler {
     private:
-        CubeMover mover;
         Edge3Seeker edgeSeeker;
         Cube3x3Scanner scanner;
 
@@ -133,7 +132,6 @@ class WhiteCrossHandler {
         }
     public:
         WhiteCrossHandler(){
-            CubeMover mover;
             Edge3Seeker edgeSeeker;
             Cube3x3Scanner scanner;
         }

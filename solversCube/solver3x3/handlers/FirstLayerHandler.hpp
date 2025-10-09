@@ -2,12 +2,11 @@
 #include <algorithm>
 
 #include "../../../rubikpp/data/cube.hpp"
-#include "../../../rubikpp/moves/mover.hpp"
 #include "../../../solverHelpers/all.hpp"
+#include "handler.hpp"
 
-class FirstLayerHandler {
+class FirstLayerHandler : public Handler {
     private:
-        CubeMover mover;
         Corner3Seeker cornerSeeker;
 
         Cube processWBR(Cube cube, std::string targetedOrientColors){
@@ -187,7 +186,6 @@ class FirstLayerHandler {
         }
     public:
         FirstLayerHandler(){
-            CubeMover mover;
             Corner3Seeker cornerSeeker;
         }
 
