@@ -1,6 +1,6 @@
 #pragma once
 #include "../CrownScanner.hpp"
-#include "../CrownCaster.hpp"
+#include "../casters/CrownCaster.hpp"
 
 class OLLScanner {
     private:
