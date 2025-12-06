@@ -1,6 +1,6 @@
 #pragma once
 
-#include "CrownScanner.hpp"
+#include "../scanners/CrownScanner.hpp"
 
 class CrownCaster {
 public:

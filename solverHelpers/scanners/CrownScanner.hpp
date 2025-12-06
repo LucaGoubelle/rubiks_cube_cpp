@@ -1,5 +1,5 @@
 #pragma once
-#include "../rubikpp/data/cube.hpp"
+#include "../../rubikpp/data/cube.hpp"
 
 using Crown = std::vector<std::vector<std::string> >;
 using Row = std::vector<std::string>;

@@ -1,5 +1,5 @@
 #pragma once
-#include "../CrownScanner.hpp"
+#include "../scanners/CrownScanner.hpp"
 #include "../casters/CrownCaster.hpp"
 
 class OLLScanner {
