@@ -12,7 +12,7 @@ class Centers4x4Caster : public CentersCaster {
         }
 
     public:
-        Centers5x5Caster(){
+        Centers4x4Caster(){
             this->size = 4;
         }
 };

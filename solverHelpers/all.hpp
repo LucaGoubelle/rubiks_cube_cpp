@@ -6,6 +6,11 @@
 #include "advanced/PLLScanner.hpp"
 #include "advanced/OLLScanner.hpp"
 
+#include "casters/centers/Centers4x4Caster.hpp"
+#include "casters/centers/Centers5x5Caster.hpp"
+#include "casters/centers/Centers6x6Caster.hpp"
+#include "casters/centers/Centers7x7Caster.hpp"
+
 #include "scanners/Cube2x2Scanner.hpp"
 #include "scanners/Cube3x3Scanner.hpp"
 #include "scanners/Cube4x4Scanner.hpp"
