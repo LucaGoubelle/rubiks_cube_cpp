@@ -18,13 +18,12 @@ class CubeStrDumper {
     public:
 
         CubeStrDumper(){
-            std::map<std::string, std::string> hmap;
-            hmap["green"] = "G";
-            hmap["blue"] = "B";
-            hmap["red"] = "R";
-            hmap["orange"] = "O";
-            hmap["white"] = "W";
-            hmap["yellow"] = "Y";
+            this->hmap["green"] = "G";
+            this->hmap["blue"] = "B";
+            this->hmap["red"] = "R";
+            this->hmap["orange"] = "O";
+            this->hmap["white"] = "W";
+            this->hmap["yellow"] = "Y";
         }
 
         std::string dump(Cube cube){

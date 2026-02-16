@@ -7,14 +7,16 @@ using namespace std;
 int main(int argc, char** argv){
     CubeBuilder builder;
     CubePrinter printer;
+    DSVSaveHandler saveHandler;
+    CubeStrDumper dumper;
     Cube cube = builder.build(3);
 
     cout << printer.printCube(cube) << endl;
+    cout << dumper.dump(cube) << endl;
 
     cout << endl;
     cout << endl;
 
-    DSVSaveHandler saveHandler;
     saveHandler.save(cube, "test.dsv");
 
     cube = saveHandler.loadSave("test.dsv");

@@ -33,7 +33,6 @@ class DSVSaveHandler {
         Face loadFace(std::string record){
             Face face;
             std::vector<std::string> rows = this->split(record, ';');
-            std::cout << rows.size() << std::endl;
             for(int i=0;i<rows.size();i++){
                 std::vector<std::string> cols = this->split(rows[i], ',');
                 face.push_back(cols);
@@ -56,7 +55,6 @@ class DSVSaveHandler {
             fissier << this->castFaceToChars(cube.right);
             fissier << this->castFaceToChars(cube.down);
             fissier.close();
-            //todo: implement this
         }
 
         Cube loadSave(std::string filename){
@@ -65,7 +63,7 @@ class DSVSaveHandler {
             std::vector<std::string> lines;
             std::string line;
             while(std::getline(fissier, line))
-                lines.push_back(line+"\n");
+                lines.push_back(line);
             fissier.close();
 
             Face backLoaded = this->loadFace(lines[0]);
