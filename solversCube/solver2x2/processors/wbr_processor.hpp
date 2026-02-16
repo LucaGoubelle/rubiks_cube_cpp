@@ -7,7 +7,6 @@ class WBRProcessor {
         std::map<std::string, std::string> data;
     public:
         WBRProcessor(){
-            std::map<std::string, std::string> data;
             //todo: implement cases here
         }
 

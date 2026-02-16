@@ -9,7 +9,6 @@ class WGOProcessor {
         std::map<std::string, std::string> data;
     public:
         WGOProcessor(){
-            std::map<std::string, std::string> data;
             //up
             this->data["up_front_right::white_orange_green"] = "L U L' U L U' L'";
             this->data["up_front_right::green_white_orange"] = "L U2 L'";

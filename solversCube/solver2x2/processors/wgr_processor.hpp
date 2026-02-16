@@ -9,7 +9,6 @@ class WGRProcessor {
         std::map<std::string, std::string> data;
     public:
         WGRProcessor(){
-            std::map<std::string, std::string> data;
             // up
             this->data["up_front_right::white_green_red"] = "U' y "+CubeAlgorithms::ELEVATOR+" y'";
             this->data["up_front_right::red_white_green"] = "U' R' U' R";

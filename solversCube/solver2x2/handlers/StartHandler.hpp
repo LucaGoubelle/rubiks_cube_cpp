@@ -17,7 +17,7 @@ class StartHandler : public Handler {
                 "red_white_blue", "red_blue_white"
             };
             std::string inputConfig = this->seeker.seekCorner(cube, possibilities);
-            std::string sequence = this->proc.process("");
+            std::string sequence = this->proc.process(inputConfig);
             cube = this->mover.multiMoves(cube, sequence);
             return cube;
         }

@@ -9,8 +9,6 @@ class WBOProcessor {
         std::map<std::string, std::string> data;
     public:
         WBOProcessor(){
-            std::map<std::string, std::string> data;
-            
             // up
             this->data["up_front_right::white_blue_orange"] = "L' U2 L U' L' U L";
             this->data["up_front_right::orange_white_blue"] = "U L' U' L";
