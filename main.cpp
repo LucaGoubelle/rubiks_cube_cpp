@@ -9,7 +9,16 @@ int main(int argc, char** argv){
     CubePrinter printer;
     Cube cube = builder.build(3);
 
-    cout << printer.printCube(cube);
+    cout << printer.printCube(cube) << endl;
+
+    cout << endl;
+    cout << endl;
+
+    DSVSaveHandler saveHandler;
+    saveHandler.save(cube, "test.dsv");
+
+    cube = saveHandler.loadSave("test.dsv");
+    cout << printer.printCube(cube) << endl;
     
     return 0;
 }

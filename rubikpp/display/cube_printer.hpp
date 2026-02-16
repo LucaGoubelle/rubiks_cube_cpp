@@ -16,8 +16,6 @@ class CubePrinter {
                 content += " ";
             for(std::string elem : row)
                 content += hmap[elem];
-            for(std::string elem : row)
-                content += " ";
             content += "\n";
             return content;
         }
