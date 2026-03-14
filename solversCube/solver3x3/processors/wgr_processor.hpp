@@ -1,12 +1,8 @@
 #pragma once
-#include <map>
-#include <string>
-#include <algorithm>
+#include "./processor.hpp"
 #include "../../../solverHelpers/CubeAlgorithms.hpp"
 
-class WGRProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class WGRProcessor : public Processor {
     public:
         WGRProcessor(){
             // up
@@ -38,13 +34,5 @@ class WGRProcessor {
             this->data["down_back_right::red_white_green"] = "R' U R U' R' U R";
             this->data["down_back_right::green_red_white"] = "R' U' R U R' U' R";
         }
-
-        /**
-         * Return the matching sequence of moves based on 
-         * inputData param
-         * @author: LucaGoubelle
-         */
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
-        }
+        
 };

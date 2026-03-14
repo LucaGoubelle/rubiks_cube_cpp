@@ -1,11 +1,7 @@
 #pragma once
-#include <map>
-#include <string>
-#include <algorithm>
+#include "./processor.hpp"
 
-class WBRProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class WBRProcessor : public Processor {
     public:
         WBRProcessor(){
             this->data["up_front_right::white_red_blue"] = "R U R' U' R U R' U' R U R' U'";
@@ -39,13 +35,5 @@ class WBRProcessor {
             this->data["down_back_right::blue_white_red"] = "R' U R U R U R'";
             this->data["down_back_right::red_blue_white"] = "R' U2 R2 U' R'";
         }
-
-        /**
-         * Return the matching sequence of moves based on 
-         * inputData param
-         * @author: LucaGoubelle
-         */
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
-        }
+        
 };

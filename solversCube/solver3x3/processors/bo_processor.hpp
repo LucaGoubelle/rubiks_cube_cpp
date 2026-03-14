@@ -1,12 +1,8 @@
 #pragma once
-#include <map>
-#include <string>
-#include <algorithm>
+#include "./processor.hpp"
 #include "../../../solverHelpers/CubeAlgorithms.hpp"
 
-class BOProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class BOProcessor : public Processor {
     public:
         BOProcessor(){
             this->data["up_front::blue_orange"] = "U y' "+CubeAlgorithms::RIGHT_BELGIUM+" y";
@@ -20,15 +16,6 @@ class BOProcessor {
             this->data["up_back::orange_blue"] = "U2 "+CubeAlgorithms::LEFT_BELGIUM;
             
             this->data["front_left::orange_blue"] = CubeAlgorithms::LEFT_BELGIUM+" U2 "+CubeAlgorithms::LEFT_BELGIUM;
-        }
-
-        /**
-         * Return the matching sequence of moves based on 
-         * inputData param
-         * @author: LucaGoubelle
-         */
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
         }
 
 };

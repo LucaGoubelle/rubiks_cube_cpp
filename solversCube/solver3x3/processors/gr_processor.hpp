@@ -1,12 +1,8 @@
 #pragma once
-#include <map>
-#include <string>
-#include <algorithm>
+#include "./processor.hpp"
 #include "../../../solverHelpers/CubeAlgorithms.hpp"
 
-class GRProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class GRProcessor : public Processor {
     public:
         GRProcessor(){
             this->data["up_front::red_green"] = "U2 y2 "+CubeAlgorithms::LEFT_BELGIUM+" y2";
@@ -28,12 +24,4 @@ class GRProcessor {
             this->data["front_left::red_green"] = CubeAlgorithms::LEFT_BELGIUM+" y2 "+CubeAlgorithms::LEFT_BELGIUM+" y2";
         }
 
-        /**
-         * Return the matching sequence of moves based on 
-         * inputData param
-         * @author: LucaGoubelle
-         */
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
-        }
 };

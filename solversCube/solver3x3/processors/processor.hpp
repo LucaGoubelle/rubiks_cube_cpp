@@ -1,12 +1,11 @@
 #pragma once
-#include <map>
 #include <string>
+#include <map>
 #include <algorithm>
 
 class Processor {
     protected:
         std::map<std::string, std::string> data;
-
     public:
         Processor(){
             std::map<std::string, std::string> data;
@@ -18,6 +17,7 @@ class Processor {
          * @author: LucaGoubelle
          */
         std::string process(std::string input_data){
-            return (this->data.count(input_data)) ? this->data[input_data]: "???";
+            return (this->data.count(input_data)) ? this->data[input_data] : "???";
         }
+
 };

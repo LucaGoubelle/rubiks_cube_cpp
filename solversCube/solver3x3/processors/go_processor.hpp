@@ -1,12 +1,8 @@
 #pragma once
-#include <map>
-#include <string>
-#include <algorithm>
+#include "./processor.hpp"
 #include "../../../solverHelpers/CubeAlgorithms.hpp"
 
-class GOProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class GOProcessor : public Processor {
     public:
         GOProcessor(){
             this->data["up_front::orange_green"] = "U2 y2 "+CubeAlgorithms::RIGHT_BELGIUM+" y2";
@@ -25,12 +21,4 @@ class GOProcessor {
             this->data["front_left::orange_green"] = CubeAlgorithms::LEFT_BELGIUM+" y2 "+CubeAlgorithms::RIGHT_BELGIUM+" y2";
         }
 
-        /**
-         * Return the matching sequence of moves based on 
-         * inputData param
-         * @author: LucaGoubelle
-         */
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
-        }
 };
