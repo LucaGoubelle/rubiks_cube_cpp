@@ -1,16 +1,6 @@
 #pragma once
-#include <string>
-#include <map>
+#include "../processor.hpp"
 
-class WBRProcessor {
-    private:
-        std::map<std::string, std::string> data;
-    public:
-        WBRProcessor(){
-            std::map<std::string, std::string> data;
-        }
+class WBRProcessor : public Processor {
 
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
-        }
 };

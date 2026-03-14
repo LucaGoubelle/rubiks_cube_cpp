@@ -1,5 +1,7 @@
 #pragma once
-//todo: implement this
-class WBProcessor {
+#include "../processor.hpp"
+
+class WBProcessor : public Processor {
+    //todo: implement this
 
 };
