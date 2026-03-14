@@ -1,12 +1,8 @@
 #pragma once
-#include <map>
-#include <string>
-
+#include "./processor.hpp"
 #include "../../../solverHelpers/CubeAlgorithms.hpp"
 
-class WBOProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class WBOProcessor : public Processor {
     public:
         WBOProcessor(){
             // up
@@ -30,7 +26,4 @@ class WBOProcessor {
             this->data["down_front_left::blue_orange_white"] = "L' U' L U L' U' L";
         }
 
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
-        }
 };

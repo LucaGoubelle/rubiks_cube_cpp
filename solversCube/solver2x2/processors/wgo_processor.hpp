@@ -1,12 +1,8 @@
 #pragma once
-#include <map>
-#include <string>
-
+#include "./processor.hpp"
 #include "../../../solverHelpers/CubeAlgorithms.hpp"
 
-class WGOProcessor {
-    private:
-        std::map<std::string, std::string> data;
+class WGOProcessor : public Processor {
     public:
         WGOProcessor(){
             //up
@@ -33,9 +29,5 @@ class WGOProcessor {
             
             this->data["down_back_left::orange_white_green"] = "L U' L' U L U' L'";
             this->data["down_back_left::green_orange_white"] = "L U L' U' L U L'";
-        }
-
-        std::string process(std::string inputData){
-            return (this->data.count(inputData)) ? this->data[inputData] : "???";
         }
 };
